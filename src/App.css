@@ -4,6 +4,10 @@
 
 }
 
+.App {
+   background-color: #f2f2f2;
+}
+
 .grid-container1{
   display: grid;
   grid-template-areas:
@@ -45,7 +49,11 @@
 
 .grid-header{
   grid-area: he;
-  background-color: red;
+  background-color: rgb(120, 135, 170);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .grid-nav{
@@ -55,15 +63,26 @@
 
 .grid-basket{
   grid-area: ba;
-  background-color: green;
+  background-color: #dad6d6;
+  text-align: center;
+  height: 600px;
+  width: 800px;
+
+  margin-right: 20px;
+  margin-left: auto;
 }
 
 .grid-total{
   grid-area: tot;
-  background-color: orange;
+  background-color: #f2f2f2;
+  text-align: center;
+  height: 600px;
+  width: flex;
+
+  margin: 20px;
 }
 
 .grid-footer{
   grid-area: fo;
-  background-color: pink;
+  background-color: #e3e3e3;
 }

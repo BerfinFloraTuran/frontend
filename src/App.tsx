@@ -17,10 +17,12 @@ function App() {
           </nav>
 
           <section className={'grid-basket'}>
+            <h2>Indkøbskurv</h2>
 
           </section>
 
           <section className={'grid-total'}>
+            <h2>Odreoverblik</h2>
 
           </section>
 
