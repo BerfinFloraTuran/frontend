@@ -24,6 +24,10 @@ function App() {
 
           </section>
 
+          <footer className={"grid-footer"}>
+
+          </footer>
+
       </div>
     </div>
   )
