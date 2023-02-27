@@ -103,7 +103,6 @@ function Listpage({dataitems, onUpdateItems,columNames}:Props){
     const elementNames = columNames ?? splitArrayProp(dataitems);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    console.log(dataitems);
 
     const handleChangePage = (
       event: React.MouseEvent<HTMLButtonElement> | null,
@@ -122,7 +121,7 @@ function Listpage({dataitems, onUpdateItems,columNames}:Props){
     const handleWrapChange = (event: React.ChangeEvent<HTMLInputElement>, index:number)=>{
         const updatedBasketItems = [...dataitems];
         updatedBasketItems[index].wrapped = event.target.checked;
-      onUpdateItems(dataitems); // Pass the updated state of basketitems
+      onUpdateItems(updatedBasketItems); // Pass the updated state of basketitems
     };
 
     const handleQuantityChange = (
