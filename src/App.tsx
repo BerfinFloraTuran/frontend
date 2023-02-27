@@ -39,6 +39,15 @@ function App() {
 
           <nav className={'grid-nav'}>
               <h2>Nav</h2>
+              <div className="container">
+  <div className="progress-container">
+    <div className="progress" id="progress"> </div>
+    <div className="circle active">25%</div>
+    <div className="circle">50%</div>
+    <div className="circle">75%</div>
+    <div className="circle">100%</div>
+  </div>
+</div>
           </nav>
 
           <section className={'grid-basket'}>
