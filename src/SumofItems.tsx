@@ -52,7 +52,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
                     <p>
                         Subtotal
                     </p>
-                    <p>
+                    <p data-testid = "subtotalTest">
                         {subtotal.subtotal} DKK
                     </p>
                 </div>
@@ -60,7 +60,8 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
                     <p>
                         Shipping
                     </p>
-                    <p className='shipping'>
+                    <p className='shipping' data-testid = "shippingTest">
+                        
                         {subtotal.shipping}
                     </p>
                 </div>
