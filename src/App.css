@@ -125,6 +125,7 @@ input[type="text"]::after {
 .grid-basket{
   grid-area: ba;
   background-color: #dad6d6;
+  min-height: 500px;
 }
 
 .grid-total{
