@@ -39,27 +39,26 @@ function App() {
           </header>
 
           <nav className={'grid-nav'}>
-              <h2>Nav</h2>
-              <div className="container">
-  <div className="progress-container">
-    <div className="progress" id="progress"> </div>
-    <div className="circle active">25%</div>
-    <div className="circle">50%</div>
-    <div className="circle">75%</div>
-    <div className="circle">100%</div>
-  </div>
-</div>
           </nav>
 
           <section className={'grid-basket'}>
-            <h2>Indkøbskurv</h2>
-          
+            <h2>Cart</h2>
+            <Listpage dataitems={data} onUpdateItems={setData}
+            columNames={['Id','Name','Price','Wrapped','Quantity']}/>
           </section>
 
           <section className={'grid-total'}>
-            <h2>Odreoverblik</h2>
             <SumofItems dataItems={data}/>
-
+            <button className='checkout'>
+              <p> Proceed to shipping </p>
+            </button>
+            <div className='discountCode'>
+              <label htmlFor= "discountCode">Insert voucher or discount code</label>
+              <input type="text" id="discountCode" name="discountCode"></input>
+              <button className='discountCode'>
+                Apply Voucher
+              </button>
+        </div>
           </section>
 
           <footer className={"grid-footer"}>

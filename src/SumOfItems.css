@@ -1,0 +1,34 @@
+#root {
+    margin: 0 auto;
+    background-color: antiquewhite;
+  
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p.legal {
+    font-size: 15px;
+    font-weight: lighter !important;
+  }
+
+  .orderTotal{
+    text-align: left;
+    position: relative;
+  }
+  
+  .orderTotal p {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+
+  .orderTotal p:last-child{
+    position: absolute;
+    right: 8px;
+  }
+
+  .orderTotal p.shipping{
+    font-weight: lighter;
+  }
