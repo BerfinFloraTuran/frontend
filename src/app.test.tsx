@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import App from "../App";
+import App from "./App";
 
 describe (App.name, ()=> {
     it("should render", () =>{
@@ -8,6 +8,5 @@ describe (App.name, ()=> {
         expect (screen.getByText ("Subtotal")).toBeInTheDocument();
     
     })
-
 
 })

@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 import {useState} from 'react'
 import './App.css'
-import Listpage, {DataItems} from './ListPage'
 import SumofItems from './SumofItems';
 import { PostalCodeinput } from './InputAssets/PostalCode';
 
