@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Listpage, {DataItems} from './ListPage'
 import SumofItems from './SumofItems';
+import { PostalCodeinput } from './InputAssets/PostalCode';
 
 
 
@@ -61,6 +62,7 @@ function App() {
           </section>
 
           <footer className={"grid-footer"}>
+          <PostalCodeinput postalcode='asd'></PostalCodeinput>
 
           </footer>
 
