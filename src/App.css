@@ -19,7 +19,6 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 3fr 3fr 2fr;
   row-gap: 20px;
-  border: 3px solid yellow;
 }
 
 @media(min-width:870px){
@@ -64,12 +63,7 @@
 .grid-basket{
   grid-area: ba;
   background-color: #dad6d6;
-  text-align: center;
-  height: 600px;
-  width: 800px;
-
   margin-right: 20px;
-  margin-left: auto;
 }
 
 .grid-total{
@@ -77,18 +71,12 @@
   background-color: #f2f2f2;
   text-align: center;
   height: 600px;
-  width: flex;
-
-  margin: 20px;
 }
 
 .grid-footer{
   grid-area: fo;
   background-color: #e3e3e3;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
 
 :root {
   --line-border-fill: #3498db;
@@ -187,4 +175,61 @@ html {
 .btn:disabled {
   background-color: var(--line-border-empty);
   cursor: not-allowed;
+}
+
+.close-button {
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position:relative;
+  left: 300px;
+  top: 25px;
+}
+.product-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.product-info {
+  margin-left: 0;
+}
+#basket ul {
+  list-style: none;
+  position: relative;
+}
+ul li {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+li:last-child {
+  border-bottom: none;
+}
+ul li select {
+  flex: 0 0 50px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+ul li label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.grid-container1 > section{
+  padding: 1em;
+  margin-bottom: 10px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+
+img {
+  width: 100px;
+  margin-right: 20px;
 }
