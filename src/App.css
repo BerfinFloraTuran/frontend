@@ -63,9 +63,18 @@ input[type="text"]::after {
     'tot'
     'fo';
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 3fr 3fr 2fr;
+  grid-template-rows: 0fr 0fr 3fr 3fr 2fr;
   row-gap: 20px;
   border: 3px solid #f2f2f2;
+}
+.grid-container1 ul{
+  width: 270px;
+}
+
+@media (min-width: 760px) {
+  .grid-container1 ul{
+    width: 350px;
+  }
 }
 
 @media(min-width:870px){
@@ -76,8 +85,11 @@ input[type="text"]::after {
       'ba tot'
       'fo fo';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:1fr 1fr 7fr 2fr;
+    grid-template-rows:0fr 0fr 7fr 2fr;
     row-gap: 20px;
+  }
+  .grid-container1 ul{
+    width: 350px;
   }
 }
 @media(min-width:1000px){
@@ -87,20 +99,21 @@ input[type="text"]::after {
       'na na na na'
       '. ba tot .'
       'fo fo fo fo';
-    grid-template-columns: 0.2fr 2fr 2fr 0.2fr;
-    grid-template-rows: 1fr 1fr 7fr 1fr;
+    grid-template-columns: 150px 600px 600px 150px;
+    grid-template-rows: 0fr 0fr 7fr 1fr;
     row-gap: 20px;
+  }
+  .grid-container1 ul{
+    width: 350px;
   }
 }
 
 .grid-header{
   grid-area: he;
   background-color: rgb(120, 135, 170);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: sticky;
   height: 60px;
+  z-index: 1;
 }
 
 .grid-nav{
@@ -112,20 +125,18 @@ input[type="text"]::after {
 .grid-basket{
   grid-area: ba;
   background-color: #dad6d6;
-  margin-right: 20px;
 }
 
 .grid-total{
   grid-area: tot;
   background-color: #f2f2f2;
   text-align: center;
-  height: 600px;
 }
 
 button.checkout{
   position: absolute;
-  right: 70px;
-  margin-top: 60px;
+  left: 35%;
+  margin-top: 160px;
   background-color: black;
   color: white;
   border-radius: 0;
@@ -135,22 +146,27 @@ button.checkout{
 
 div.discountCode{
   margin-top: 180px;
+  padding-bottom: 50px;
+}
+
+#discountCode{
+  margin-left: 20px;
 }
 
 label {
   position: relative;
 }
 
-label,
-input{
-  padding-left: 30px;
-}
 input{
   background-color: #dad6d6;
   border-color: #bebdbd;
   border: 0px;
   height:30px;
   width: 100%;
+}
+
+#check{
+  width: 15px;
 }
 
 label:before{
@@ -179,9 +195,6 @@ button p {
   text-align: center;
 }
 
-
-
-
 .grid-footer{
   grid-area: fo;
   background-color: #e3e3e3;
@@ -191,7 +204,6 @@ button p {
   --line-border-fill: #3498db;
   --line-border-empty: #e0e0e0;
 }
-
 
 * {
   padding: 0;
@@ -204,10 +216,10 @@ html {
   box-sizing: border-box;
 }
 
-
 .container {
   margin-top: 15px;
   text-align: center;
+
 }
 
 .progress-container::before {
@@ -225,11 +237,10 @@ html {
 .progress-container {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  margin-bottom: 30px;
-  margin-left: 200px;
+  margin-left: 20%;
   max-width: 100%;
-  width: 350px;
+  width: 60%;
+  grid-area: na;
 }
 
 .progress {
@@ -294,16 +305,17 @@ html {
   background: transparent;
   cursor: pointer;
   position:relative;
-  left: 300px;
-  top: 25px;
+  left: 380px;
+  bottom: 60px;
 }
 .product-wrapper {
   display: flex;
   align-items: center;
+
 }
 
 .product-info {
-  margin-left: 0;
+  text-align: left;
 }
 #basket ul {
   list-style: none;
@@ -331,11 +343,10 @@ ul li label {
 
 .grid-container1 > section{
   padding: 1em;
-  margin-bottom: 10px;
   box-shadow: none;
   display: flex;
   flex-direction: column;
-  position:relative;
+  position: relative;
 }
 
 img {

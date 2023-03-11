@@ -18,7 +18,7 @@ function App() {
             const response = await fetch('https://raw.githubusercontent.com/larsthorup/checkout-data/main/product.json');
             const data = await response.json();
             const mappedData = data
-                .slice(0, 4)
+                .slice(7, 10)
                 .map((item: any) => {
                     const mappedItem: Product = {
                         price: item.price,
@@ -52,14 +52,12 @@ function App() {
             <div className={"grid-container1"}>
 
                 <header className={'grid-header'}>
-                    <h2>Header</h2>
+
+                        <h2>Header</h2>
+
                 </header>
 
-                <nav className={'grid-nav'}>
-                    <h2>Nav</h2>
-                </nav>
 
-                    <div className="container">
                         <div className="progress-container">
                             <div className="progress" id="progress"></div>
                             <div className="circle active">25%</div>
@@ -67,7 +65,6 @@ function App() {
                             <div className="circle">75%</div>
                             <div className="circle">100%</div>
                         </div>
-                    </div>
 
 
                 <section className={'grid-basket'} id={"basket"}>
@@ -76,11 +73,13 @@ function App() {
                         <section key={index}>
                             <div className="product-wrapper">
                                 <img src={"src/assets/noimg.png"} alt={product.name}/>
+                                <button className="close-button" onClick={() => removeItem(index)}>
+                                    X
+                                </button>
                                 <div className="product-info">
-                                    <button className="close-button" onClick={() => removeItem(index)}>
-                                        X
-                                    </button>
-                                    <ul>
+
+                                    <ul id={"itemslist"}>
+                                        <br/>
                                         <li>{product.price},- pr. stk.</li>
                                         <li>{product.name}</li>
                                         <li>
@@ -90,8 +89,7 @@ function App() {
                                                 value={product.quantity}
                                                 onChange={(e) =>
                                                     updateQuantity(index, parseInt(e.target.value))
-                                                }
-                                            >
+                                                }>
                                                 {[...Array(10)].map((_, i) => (
                                                     <option key={i} value={i + 1}>
                                                         {i + 1}
@@ -101,8 +99,9 @@ function App() {
                                         </li>
                                         <li>
                                             <label>Gaveindpakning</label>
-                                            <input type={"checkbox"}/>
+                                            <input id={"check"} type={"checkbox"}/>
                                         </li>
+                                        <br/>
                                     </ul>
                                 </div>
                             </div>
