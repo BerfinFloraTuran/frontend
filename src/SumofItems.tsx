@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './App.css'
+import './SumOfItems.css'
 import React from 'react';
 import { Product } from './App';
 
-function calculatePrice(products:Product[]): { subtotal: number, total: number } {
+function calculatePrice(products:Product[]): { total: number; shipping: number; subtotal: number } {
   const SHIPPING_THRESHOLD = 500;
-  const SHIPPING_FEE = 10;
+  let SHIPPING_FEE = 49;
   let total = 0;
 
     const subtotal = products.reduce((sum, product) =>
@@ -15,9 +15,13 @@ function calculatePrice(products:Product[]): { subtotal: number, total: number }
     total = subtotal;
   }else{
     total = subtotal + SHIPPING_FEE;
+  total = subtotal;
+
+  if(subtotal>500){
+    SHIPPING_FEE = 0;
   }
 
- return{ subtotal: subtotal,
+ return{ subtotal: subtotal, shipping: SHIPPING_FEE,
   total: total};
 
 }
@@ -34,19 +38,37 @@ function SumofItems({dataItems}:Props) {
   return (
     <div className="App">
       <div>
+      <h2>Order Overview</h2>
+      <p className='legal'>Your order will not be official until we have confirmed your order.</p>
       </div>
-      <h2>Total Price For Order</h2>
-      <div>
+      <div className='orderTotal'>
         <p>
-          Subtotal: {subtotal.subtotal}
+          Subtotal
         </p>
-        
         <p>
-          Total: {subtotal.total}
+        {subtotal.subtotal} DKK
+        </p>
+      </div>
+      <div className='orderTotal'>
+        <p>
+          Shipping 
+        </p>
+        <p className='shipping'>
+          {subtotal.shipping}
+        </p>
+      </div>
+      <div className='orderTotal'>
+        <p>
+          Total
+        </p>
+        <p>
+        {subtotal.total} DKK
         </p>
       </div>
     </div>
   )
 }
 
-export default SumofItems
+export default SumofItems{
+    SumofItems
+}

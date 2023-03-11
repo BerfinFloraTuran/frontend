@@ -3,6 +3,7 @@ import {useState} from 'react'
 import './App.css'
 import Listpage, {DataItems} from './ListPage'
 import SumofItems from './SumofItems';
+import { PostalCodeinput } from './InputAssets/PostalCode';
 
 export interface Product {
     price: number;
@@ -56,6 +57,8 @@ function App() {
 
                 <nav className={'grid-nav'}>
                     <h2>Nav</h2>
+                </nav>
+
                     <div className="container">
                         <div className="progress-container">
                             <div className="progress" id="progress"></div>
@@ -65,10 +68,10 @@ function App() {
                             <div className="circle">100%</div>
                         </div>
                     </div>
-                </nav>
+
 
                 <section className={'grid-basket'} id={"basket"}>
-                    <h2>Indkøbskurv</h2>
+                    <h2>Cart</h2>
                     {productList.map((product, index) => (
                         <section key={index}>
                             <div className="product-wrapper">
@@ -107,13 +110,22 @@ function App() {
                     ))}
                 </section>
 
-                <section className={'grid-total'}>
-                    <h2>Odreoverblik</h2>
-                    <SumofItems dataItems={productList}/>
+          <section className={'grid-total'}>
+            <SumofItems dataItems={productList}/>
+            <button className='checkout'>
+              <p> Proceed to shipping </p>
+            </button>
+            <div className='discountCode'>
+              <label htmlFor= "discountCode">Insert voucher or discount code</label>
+              <input type="text" id="discountCode" name="discountCode"></input>
+              <button className='discountCode'>
+                Apply Voucher
+              </button>
+        </div>
+          </section>
 
-                </section>
-
-                <footer className={"grid-footer"}>
+          <footer className={"grid-footer"}>
+          <PostalCodeinput postalcode='asd'></PostalCodeinput>
 
                 </footer>
             </div>

@@ -1,11 +1,57 @@
 #root {
   margin: 0 auto;
-  background-color: antiquewhite;
+  background-color: #f2f2f2;
 
 }
 
 .App {
    background-color: #f2f2f2;
+}
+.autocomplete {
+  max-width: 100%;
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background-color: #f2f2f2;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  padding: 10px 30px 10px 10px; /* Add space for the dropdown arrow and the options list */
+  border: 1px solid #ccc;
+}
+
+input[type="text"]::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .grid-container1{
@@ -19,6 +65,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 3fr 3fr 2fr;
   row-gap: 20px;
+  border: 3px solid #f2f2f2;
 }
 
 @media(min-width:870px){
@@ -53,11 +100,13 @@
   top: 0;
   left: 0;
   right: 0;
+  height: 60px;
 }
 
 .grid-nav{
   grid-area: na;
   background-color: #f2f2f2;
+  align-items: center;
 }
 
 .grid-basket{
@@ -72,6 +121,66 @@
   text-align: center;
   height: 600px;
 }
+
+button.checkout{
+  position: absolute;
+  right: 70px;
+  margin-top: 60px;
+  background-color: black;
+  color: white;
+  border-radius: 0;
+  height: 50px;
+  width: 150px;
+}
+
+div.discountCode{
+  margin-top: 180px;
+}
+
+label {
+  position: relative;
+}
+
+label,
+input{
+  padding-left: 30px;
+}
+input{
+  background-color: #dad6d6;
+  border-color: #bebdbd;
+  border: 0px;
+  height:30px;
+  width: 100%;
+}
+
+label:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+}
+
+button.discountCode{
+  position: relative;
+  margin-left: 30px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #bebdbd;
+  color:black;
+  border-radius: 0;
+  height: 40px;
+  width: 150px;
+}
+
+button p {
+  font-size: 14px;
+  text-align: center;
+}
+
+
+
 
 .grid-footer{
   grid-area: fo;
