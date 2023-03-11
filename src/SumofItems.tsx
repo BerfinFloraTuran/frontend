@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './SumOfItems.css'
 import React from 'react';
-import { Product } from './App';
+import { Product } from './Basket';
 
 function calculatePrice(products:Product[]):{ subtotal: number, shipping: String, total: number } {
     const SHIPPING_THRESHOLD = 500;

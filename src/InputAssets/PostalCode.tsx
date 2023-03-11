@@ -1,6 +1,6 @@
 import { Label } from '@mui/icons-material';
 import * as React from 'react'
-import '../App.css'
+import '../Basket.css'
 
 
 interface Props {
