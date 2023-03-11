@@ -7,6 +7,52 @@
 .App {
    background-color: #f2f2f2;
 }
+.autocomplete {
+  max-width: 100%;
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background-color: #f2f2f2;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  padding: 10px 30px 10px 10px; /* Add space for the dropdown arrow and the options list */
+  border: 1px solid #ccc;
+}
+
+input[type="text"]::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 
 .grid-container1{
   display: grid;

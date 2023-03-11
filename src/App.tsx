@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Listpage, {DataItems} from './ListPage'
 import SumofItems from './SumofItems';
+import { PostalCodeinput } from './InputAssets/PostalCode';
 
 
 
@@ -52,8 +53,7 @@ function App() {
 
           <section className={'grid-basket'}>
             <h2>Indkøbskurv</h2>
-            <Listpage dataitems={data} onUpdateItems={setData}
-            columNames={['Id','Name','Price','Wrapped','Quantity']}/>
+          
           </section>
 
           <section className={'grid-total'}>
@@ -63,6 +63,7 @@ function App() {
           </section>
 
           <footer className={"grid-footer"}>
+          <PostalCodeinput postalcode='asd'></PostalCodeinput>
 
           </footer>
 
