@@ -10,6 +10,7 @@ interface Props {
 
 function Checkout(props: Props) {
     const [selectedOption, setSelectedOption] = useState('');
+    const [showBillingAddress, setShowBillingAddress] = useState(false);
 
     const handleShippingOptionSelect = (option: string) => {
         setSelectedOption(option);
@@ -53,6 +54,40 @@ function Checkout(props: Props) {
                         <PostalCodeinput postalcode='asd'></PostalCodeinput>
                     </div>
                 </form>
+                <br/>
+                <button onClick={() => setShowBillingAddress(!showBillingAddress)}>Ret faktureringsadresse</button>
+                {showBillingAddress ? (
+                        <div className={"grid-billingForm"}>
+                            <br/>
+                            <h3>Faktureringsadresse</h3>
+                            <br/>
+                            <form className="billing-form">
+                                <div className="form-row">
+                                    <label htmlFor="firstName">Fornavn</label>
+                                    <input type="text" id="firstName" name="firstName" required/>
+                                </div>
+                                <div className="form-row">
+                                    <label htmlFor="lastName">Efternavn</label>
+                                    <input type="text" id="lastName" name="lastName" required/>
+                                </div>
+                                <div className="form-row">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="email" id="email" name="email" required/>
+                                </div>
+                                <div className="form-row">
+                                    <label htmlFor="phone">Telefonnummer</label>
+                                    <input type="tel" id="phone" name="phone" required/>
+                                </div>
+                                <div className="form-row">
+                                    <label>Adresse</label>
+                                    <PostalCodeinput postalcode='asd'></PostalCodeinput>
+                                </div>
+                            </form>
+                        </div>
+                ) : (
+                    <div></div>
+                )}
+
             </div>
             <div className={"grid-orderView"}>
                 <h2>Ordreoverblik</h2>
