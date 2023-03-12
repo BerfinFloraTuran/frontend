@@ -33,7 +33,7 @@ function Checkout(props: Props) {
             <div className={"grid-checkoutForm"}>
                 <h3>Leveringsadresse</h3>
                 <br/>
-                <form className="checkout-form">
+                <form id="form1" className="checkout-form">
                     <div className="form-row">
                         <label htmlFor="firstName">Fornavn</label>
                         <input type="text" id="firstName" name="firstName" required/>
@@ -44,11 +44,11 @@ function Checkout(props: Props) {
                     </div>
                     <div className="form-row">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" required/>
+                        <input type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
                     </div>
                     <div className="form-row">
                         <label htmlFor="phone">Telefonnummer</label>
-                        <input type="tel" id="phone" name="phone" required/>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
                     </div>
                     <div className="form-row">
                         <label>Adresse</label>
@@ -62,7 +62,7 @@ function Checkout(props: Props) {
                             <br/>
                             <h3>Faktureringsadresse</h3>
                             <br/>
-                            <form className="billing-form">
+                            <form id="form" className="billing-form">
                                 <div className="form-row">
                                     <label htmlFor="firstName">Fornavn</label>
                                     <input type="text" id="firstName" name="firstName" required/>
@@ -73,12 +73,12 @@ function Checkout(props: Props) {
                                 </div>
                                 <div className="form-row">
                                     <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" name="email" required/>
+                                    <input type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
                                 </div>
                                 <div className="form-row">
-                                    <label htmlFor="phone">Telefonnummer</label>
-                                    <input type="tel" id="phone" name="phone" required/>
-                                </div>
+                        <label htmlFor="phone">Telefonnummer</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
+                    </div>
                                 <div className="form-row">
                                     <label>Adresse</label>
                                     <PostalCodeinput postalcode='asd'></PostalCodeinput>
@@ -103,6 +103,9 @@ function Checkout(props: Props) {
                                     </ul>
                         </section>
                     ))}
+                    <button type="submit" form="form1" className='checkout'>
+                        <p> Gå til betaling </p>
+                    </button>
             </div>
             <div className={"grid-shipping"}>
                 <h3>Leveringsmuligheder</h3>
