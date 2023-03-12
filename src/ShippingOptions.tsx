@@ -25,7 +25,7 @@ function ShippingOptions(props: {
                 <div className="shipping-option-info">
                     <div className="shipping-option-title">Standard</div>
                     <div className="shipping-option-desc">
-                        3-5 business days. Free shipping
+                        7-14 hverdage. Gratis levering
                     </div>
                 </div>
             </div>
@@ -39,9 +39,9 @@ function ShippingOptions(props: {
                     <div className="shipping-option-radio-dot" />
                 </div>
                 <div className="shipping-option-info">
-                    <div className="shipping-option-title">Express</div>
+                    <div className="shipping-option-title">Ekspres</div>
                     <div className="shipping-option-desc">
-                        1-2 business days. $5.00 shipping fee
+                        4-7 hverdage. 49,- Levering
                     </div>
                 </div>
             </div>
@@ -55,9 +55,9 @@ function ShippingOptions(props: {
                     <div className="shipping-option-radio-dot" />
                 </div>
                 <div className="shipping-option-info">
-                    <div className="shipping-option-title">Next Day</div>
+                    <div className="shipping-option-title">Næste dag</div>
                     <div className="shipping-option-desc">
-                        Next business day. $10.00 shipping fee
+                        Næste hverdag. 79,- Levering
                     </div>
                 </div>
             </div>

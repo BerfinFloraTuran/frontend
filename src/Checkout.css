@@ -8,7 +8,7 @@
     'sh'
     'pa';
     grid-template-columns: 1fr;
-    grid-template-rows: 0fr 0fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr;
     row-gap: 20px;
 }
 
@@ -21,7 +21,7 @@
       'sh or'
       'pa . ';
         grid-template-columns: 1fr 1fr;
-        grid-template-rows:0fr 0fr 7fr 2fr;
+        grid-template-rows:0fr 0fr 0fr 0fr;
         row-gap: 20px;
     }
 }
@@ -34,7 +34,7 @@
       '. sh or .'
       '. pa pa . ';
         grid-template-columns: 150px 700px 500px 150px;
-        grid-template-rows: 0fr 0fr 1fr 1fr 1fr;
+        grid-template-rows: 0fr 0fr 0fr 0fr 0fr;
         row-gap: 20px;
     }
 }
@@ -67,7 +67,6 @@
 
 .grid-payment{
     grid-area: pa;
-    background-color: green;
 }
 
 .checkout-form {

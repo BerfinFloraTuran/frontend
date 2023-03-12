@@ -3,6 +3,7 @@ import './Checkout.css'
 import { PostalCodeinput } from './InputAssets/PostalCode';
 import ShippingOptions from "./ShippingOptions";
 import {Product} from "./Basket";
+import Payment from "./Payment"
 
 interface Props {
     productList: Product[];
@@ -109,7 +110,7 @@ function Checkout(props: Props) {
                 <ShippingOptions onShippingOptionSelect={handleShippingOptionSelect} />
             </div>
             <div className={"grid-payment"}>
-                <h2>Betalingsmuligheder</h2>
+                <Payment/>
             </div>
             </div>
         </>
