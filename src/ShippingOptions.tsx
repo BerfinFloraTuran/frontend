@@ -16,49 +16,36 @@ function ShippingOptions(props: {
             <div className="shipping-option">
                 <div
                     className={`shipping-option-radio ${
-                        selectedOption === 'Standard' ? 'selected' : ''
-                    }`}
-                    onClick={() => handleOptionSelect('Standard')}
-                >
+                        selectedOption === 'Standard' ? 'selected' : ''}`}
+                    onClick={() => handleOptionSelect('Standard')}>
                     <div className="shipping-option-radio-dot" />
                 </div>
                 <div className="shipping-option-info">
                     <div className="shipping-option-title">Standard</div>
-                    <div className="shipping-option-desc">
-                        7-14 hverdage. Gratis levering
-                    </div>
+                    <div className="shipping-option-desc">7-14 hverdage. Gratis levering</div>
                 </div>
             </div>
             <div className="shipping-option">
                 <div
                     className={`shipping-option-radio ${
-                        selectedOption === 'Express' ? 'selected' : ''
-                    }`}
-                    onClick={() => handleOptionSelect('Express')}
-                >
+                        selectedOption === 'Express' ? 'selected' : ''}`}
+                    onClick={() => handleOptionSelect('Express')}>
                     <div className="shipping-option-radio-dot" />
                 </div>
                 <div className="shipping-option-info">
                     <div className="shipping-option-title">Ekspres</div>
-                    <div className="shipping-option-desc">
-                        4-7 hverdage. 49,- Levering
-                    </div>
+                    <div className="shipping-option-desc">4-7 hverdage. 49,- Levering</div>
                 </div>
             </div>
             <div className="shipping-option">
                 <div
-                    className={`shipping-option-radio ${
-                        selectedOption === 'Next Day' ? 'selected' : ''
-                    }`}
-                    onClick={() => handleOptionSelect('Next Day')}
-                >
+                    className={`shipping-option-radio ${selectedOption === 'Next Day' ? 'selected' : ''}`}
+                    onClick={() => handleOptionSelect('Next Day')}>
                     <div className="shipping-option-radio-dot" />
                 </div>
                 <div className="shipping-option-info">
                     <div className="shipping-option-title">Næste dag</div>
-                    <div className="shipping-option-desc">
-                        Næste hverdag. 79,- Levering
-                    </div>
+                    <div className="shipping-option-desc">Næste hverdag. 79,- Levering</div>
                 </div>
             </div>
         </div>

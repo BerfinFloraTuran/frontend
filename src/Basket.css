@@ -277,6 +277,12 @@ html {
 
 .circle.active {
   border-color: var(--line-border-fill);
+  transform: scale(1.1);
+}
+
+.circle:hover {
+  border-color: var(--line-border-fill);
+  transform: scale(1.1);
 }
 
 .btn {

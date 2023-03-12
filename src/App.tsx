@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Basket, { Product } from './Basket';
-import Checkout from './Checkout';
+import Checkout from "./Checkout";
+import Basket, {Product} from "./Basket";
+import {useState} from "react";
 
 function App() {
     const [productList, setProductList] = useState<Product[]>([]);
@@ -11,13 +11,20 @@ function App() {
         setShowCheckout(true);
     };
 
+    const toBasket = (productList: any) => {
+        setProductList(productList);
+        setShowCheckout(false);
+    };
+
     return (
         <div className="App">
-            {showCheckout ? (
-                <Checkout productList={productList} />
-            ) : (
-                <Basket onCheckout={handleCheckout} />
-            )}
+            {(() => {
+                if (showCheckout) {
+                    return <Checkout productList={productList} onBasket={toBasket} />;
+                } else {
+                    return <Basket onCheckout={handleCheckout} productList={productList} />;
+                }
+            })()}
         </div>
     );
 }

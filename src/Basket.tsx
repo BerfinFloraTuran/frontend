@@ -12,31 +12,31 @@ export interface Product {
 }
 interface Props {
     onCheckout: (productList: Product[]) => void;
+    productList: Product[];
 }
+
 function Basket(props: Props) {
-    const [productList, setProductList] = useState<Product[]>([]);
+    const [productList, setProductList] = useState<Product[]>(props.productList);
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch('https://raw.githubusercontent.com/larsthorup/checkout-data/main/product.json');
-            const data = await response.json();
-            const mappedData = data
-                .slice(7, 10)
-                .map((item: any) => {
-                    const mappedItem: Product = {
-                        price: item.price,
-                        name: item.name,
-                        quantity: 1,
-                        wrapped: false
-                    };
-                    return mappedItem;
-                });
-            setProductList(mappedData);
+            const data = props.productList.length === 0
+                ? await fetch('https://raw.githubusercontent.com/larsthorup/checkout-data/main/product.json')
+                    .then(response => response.json())
+                    .then(data => data.slice(7, 10))
+                : props.productList;
 
+            const mappedData = data.map((item: any) => ({
+                price: item.price,
+                name: item.name,
+                quantity: item.quantity,
+                wrapped: false
+            }));
+            setProductList(mappedData);
         }
 
         fetchData();
-    }, []);
+    }, [props.productList]);
     const removeItem = (index: number) => {
         const updatedProductList = [...productList];
         updatedProductList.splice(index, 1);
@@ -59,10 +59,10 @@ function Basket(props: Props) {
 
                 <div className="grid-nav">
                     <div className="progress" id="progress"></div>
-                    <div className="circle active">25%</div>
-                    <div className="circle">50%</div>
-                    <div className="circle">75%</div>
-                    <div className="circle">100%</div>
+                    <div className="circle active">1</div>
+                    <div className="circle" onClick={() => props.onCheckout(productList)}>2</div>
+                    <div className="circle">3</div>
+                    <div className="circle">4</div>
                 </div>
 
                 <section className={'grid-basket'} id={"basket"}>

@@ -7,6 +7,7 @@ import Payment from "./Payment"
 
 interface Props {
     productList: Product[];
+    onBasket: (productList: Product[]) => void;
 }
 
 function Checkout(props: Props) {
@@ -25,10 +26,10 @@ function Checkout(props: Props) {
                 </header>
                 <div className="progress-container">
                     <div className="progress" id="progress"></div>
-                    <div className="circle">25%</div>
-                    <div className="circle active">50%</div>
-                    <div className="circle">75%</div>
-                    <div className="circle">100%</div>
+                    <div className="circle" onClick={() => props.onBasket(props.productList)}>1</div>
+                    <div className="circle active">2</div>
+                    <div className="circle">3</div>
+                    <div className="circle">4</div>
                 </div>
             <div className={"grid-checkoutForm"}>
                 <h3>Leveringsadresse</h3>
