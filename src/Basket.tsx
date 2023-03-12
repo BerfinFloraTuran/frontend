@@ -29,7 +29,7 @@ function Basket(props: Props) {
             const mappedData = data.map((item: any) => ({
                 price: item.price,
                 name: item.name,
-                quantity: item.quantity,
+                quantity: item.quantity || 1,
                 wrapped: false
             }));
             setProductList(mappedData);
