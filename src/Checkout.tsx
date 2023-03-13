@@ -52,6 +52,14 @@ function Checkout(props: Props) {
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
                     </div>
                     <div className="form-row">
+                        <label htmlFor="company">Firma (valgfri)</label>
+                        <input type="text" id="company" name="company"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="cvr">CVR</label>
+                        <input type="cvr" id="cvr" name="cvr" pattern="[0-9]{8}" title ="Venligst indtast 8 cifret CVR nummer"/>
+                    </div>
+                    <div className="form-row">
                         <label>Adresse</label>
                         <PostalCodeinput postalcode='asd'></PostalCodeinput>
                     </div>
@@ -79,6 +87,14 @@ function Checkout(props: Props) {
                                 <div className="form-row">
                         <label htmlFor="phone">Telefonnummer</label>
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
+                    </div>
+                                        <div className="form-row">
+                        <label htmlFor="company">Firma (valgfri)</label>
+                        <input type="text" id="company" name="company"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="cvr">CVR</label>
+                        <input type="cvr" id="cvr" name="cvr" pattern="[0-9]{8}" title ="Venligst indtast 8 cifret CVR nummer"/>
                     </div>
                                 <div className="form-row">
                                     <label>Adresse</label>
