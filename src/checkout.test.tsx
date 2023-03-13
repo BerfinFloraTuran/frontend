@@ -26,7 +26,7 @@ it("Should render", async () => {
 
 
 
-
+// Test if email and phone number works for validation
 describe (Checkout.name, ()=> {
 
     it("Should be invalid email", async () => {
@@ -47,18 +47,20 @@ describe (Checkout.name, ()=> {
         await user.type(emailTest, "notvalidemail"); 
 
         const paymentbutton = screen.getByTestId("paymentbuttonTest") as HTMLButtonElement; 
-        await user.click(paymentbutton);
+        //await user.click(paymentbutton);
 
         console.log(emailTest.checkValidity());
         expect(emailTest).toBeInvalid();
-        
-        
 
-        
+        await user.type(emailTest, "validemail@valid.dk"); 
 
-
-    
+        const phoneTest = screen.getByTestId("phoneTest") as HTMLInputElement; 
+        await user.type(phoneTest, "12345678"); 
+        //await user.click(paymentbutton);
+        expect(phoneTest).toBeValid(); 
+        await user.type(phoneTest, "1234");    
+        expect(phoneTest).toBeInvalid(); 
         
     }) 
     
-    })
+    }) 

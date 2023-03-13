@@ -49,8 +49,8 @@ function Checkout(props: Props) {
                         <input data-testid = "emailTest" type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
                     </div>
                     <div className="form-row">
-                        <label data-testid = "phoneTest" htmlFor="phone">Telefonnummer</label>
-                        <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
+                        <label htmlFor="phone">Telefonnummer</label>
+                        <input data-testid = "phoneTest" type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
                     </div>
                     <div className="form-row">
                         <label htmlFor="company">Firma (valgfri)</label>

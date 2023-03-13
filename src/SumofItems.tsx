@@ -74,7 +74,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
                     <p>
                         Rabat
                     </p>
-                    <p>
+                    <p data-testid = "requiredTest">
                         Brug {subtotal.requiredForDiscount} DKK mere for at opnå 10% rabat
                     </p>
                 </div>
@@ -83,7 +83,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
                     <p>
                         Rabat
                     </p>
-                    <p>
+                    <p data-testid="discountTest">
                         -{subtotal.discount} DKK
                     </p>
                 </div>
