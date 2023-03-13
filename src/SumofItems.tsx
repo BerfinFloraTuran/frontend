@@ -90,14 +90,6 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
             )}
                 <div className='orderTotal'>
                     <p>
-                        Rabat
-                    </p>
-                    <p>
-                        -{subtotal.discount} DKK
-                    </p>
-                </div>
-                <div className='orderTotal'>
-                    <p>
                         Forsendelse
                     </p>
                     <p className='shipping' data-testid = "shippingTest">

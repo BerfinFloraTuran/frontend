@@ -57,7 +57,7 @@ function Checkout(props: Props) {
                         <input type="text" id="company" name="company"/>
                     </div>
                     <div className="form-row">
-                        <label htmlFor="cvr">CVR</label>
+                        <label htmlFor="cvr">CVR (valgfri)</label>
                         <input type="cvr" id="cvr" name="cvr" pattern="[0-9]{8}" title ="Venligst indtast 8 cifret CVR nummer"/>
                     </div>
                     <div className="form-row">
