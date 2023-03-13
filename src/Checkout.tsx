@@ -38,7 +38,7 @@ function Checkout(props: Props) {
                 <form id="form1" className="checkout-form">
                     <div className="form-row">
                         <label htmlFor="firstName">Fornavn</label>
-                        <input type="text" id="firstName" name="firstName" required/>
+                        <input type="text" id="firstName" name="firstName" required autoFocus={true}/>
                     </div>
                     <div className="form-row">
                         <label htmlFor="lastName">Efternavn</label>
