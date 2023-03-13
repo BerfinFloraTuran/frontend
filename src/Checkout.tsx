@@ -36,19 +36,19 @@ function Checkout(props: Props) {
                 <br/>
                 <form id="form1" className="checkout-form">
                     <div className="form-row">
-                        <label htmlFor="firstName">Fornavn</label>
+                        <label data-testid = "firstnameTest" htmlFor="firstName">Fornavn</label>
                         <input type="text" id="firstName" name="firstName" required/>
                     </div>
                     <div className="form-row">
-                        <label htmlFor="lastName">Efternavn</label>
+                        <label data-testid = "lastnameTest" htmlFor="lastName">Efternavn</label>
                         <input type="text" id="lastName" name="lastName" required/>
                     </div>
                     <div className="form-row">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
+                        <input data-testid = "emailTest" type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
                     </div>
                     <div className="form-row">
-                        <label htmlFor="phone">Telefonnummer</label>
+                        <label data-testid = "phoneTest" htmlFor="phone">Telefonnummer</label>
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
                     </div>
                     <div className="form-row">
@@ -66,15 +66,15 @@ function Checkout(props: Props) {
                             <form id="form" className="billing-form">
                                 <div className="form-row">
                                     <label htmlFor="firstName">Fornavn</label>
-                                    <input type="text" id="firstName" name="firstName" required/>
+                                    <input data-testid = "firstnameTest" type="text" id="firstName" name="firstName" required/>
                                 </div>
                                 <div className="form-row">
                                     <label htmlFor="lastName">Efternavn</label>
-                                    <input type="text" id="lastName" name="lastName" required/>
+                                    <input data-testid = "lastnameTest" type="text" id="lastName" name="lastName" required/>
                                 </div>
                                 <div className="form-row">
                                     <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
+                                    <input data-testid = "emailTest" type="email" id="email" name="email" required title="Venligst indtast gyldig email adresse"/>
                                 </div>
                                 <div className="form-row">
                         <label htmlFor="phone">Telefonnummer</label>
@@ -104,7 +104,7 @@ function Checkout(props: Props) {
                                     </ul>
                         </section>
                     ))}
-                    <button type="submit" form="form1" className='checkout'>
+                    <button data-testid = "paymentbuttonTest" type="submit" form="form1" className='checkout'>
                         <p> Gå til betaling </p>
                     </button>
             </div>

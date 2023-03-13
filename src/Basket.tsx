@@ -60,7 +60,7 @@ function Basket(props: Props) {
                 <div className="grid-nav">
                     <div className="progress" id="progress"></div>
                     <div className="circle active">1</div>
-                    <div className="circle" onClick={() => props.onCheckout(productList)}>2</div>
+                    <div className="circle" data-testid = "navTest"onClick={() => props.onCheckout(productList)}>2</div>
                     <div className="circle">3</div>
                     <div className="circle">4</div>
                 </div>
