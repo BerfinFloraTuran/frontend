@@ -164,6 +164,7 @@ function Basket(props: Props) {
                                                 <input
                                                     id={`check-${index}`}
                                                     type={"checkbox"}
+                                                    checked={isChecked}
                                                     onChange={handleCheckboxChange(index, product.upsellProductId)}
                                                 />
                                             </li>
@@ -176,11 +177,11 @@ function Basket(props: Props) {
                                                 <button className="close-button" onClick={handlePopupCloseClick}>
                                                     X
                                                 </button>
-                                                <h3>Tak for din bestilling!</h3>
-                                                <p>Din ordre er blevet modtaget.</p>
+                                                <h3>Bekræftelse</h3>
+                                                <p>Vil du erstatte produktet i din kurv?</p>
                                                 <button onClick={(e) =>
                                                     updateItem(index, product.upsellProductId)
-                                                }>OK</button>
+                                                }>JA</button>
                                             </div>
                                         </div>
                                     )}

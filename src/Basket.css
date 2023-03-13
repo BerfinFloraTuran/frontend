@@ -319,15 +319,15 @@ html {
 }
 
 .close-button {
-  width: 15px;
-  height: 15px;
+  width: 50px;
+  height: 30px;
   font-size: 15px;
   border: none;
   background: transparent;
   cursor: pointer;
   position:relative;
-  left: 380px;
-  bottom: 60px;
+  left: 420px;
+  bottom: 65px;
 }
 .product-wrapper {
   display: flex;
@@ -409,12 +409,12 @@ img {
 }
 
 .modal button {
-  padding: 10px 20px;
-  background-color: #3f51b5;
-  color: #fff;
+  background-color: lightgray;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: black;
+  font-weight: bolder;
 }
 
 .modal button:hover {
