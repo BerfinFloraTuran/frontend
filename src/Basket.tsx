@@ -68,10 +68,10 @@ function Basket(props: Props) {
                 <section className={'grid-basket'} id={"basket"}>
                     <h2>Cart</h2>
                     {productList.map((product, index) => (
-                        <section key={index}>
+                        <section data-testid="dataTesting" key={index}>
                             <div className="product-wrapper">
                                 <img src={"src/assets/noimg.png"} alt={product.name}/>
-                                <button className="close-button" onClick={() => removeItem(index)}>
+                                <button className="close-button" data-testid="close-buttonTesting" onClick={() => removeItem(index)}>
                                     X
                                 </button>
                                 <div className="product-info">
@@ -84,6 +84,7 @@ function Basket(props: Props) {
                                             <label>Antal</label>
                                             <select
                                                 id={'val'}
+                                                data-testid="quantityTest"
                                                 value={product.quantity}
                                                 onChange={(e) =>
                                                     updateQuantity(index, parseInt(e.target.value))
@@ -97,7 +98,7 @@ function Basket(props: Props) {
                                         </li>
                                         <li>
                                             <label>Gaveindpakning</label>
-                                            <input id={"check"} type={"checkbox"}/>
+                                            <input id={"check"} type={"checkbox"} data-testid="checkboxTest"/>
                                         </li>
                                         <br/>
                                     </ul>
