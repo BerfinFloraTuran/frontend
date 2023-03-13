@@ -5,7 +5,7 @@ import { Product } from './Basket';
 
 function calculatePrice(products:Product[]):{ subtotal: number, shipping: String, total: number } {
     const SHIPPING_THRESHOLD = 500;
-    let SHIPPING_FEE = "Calculated at next step";
+    let SHIPPING_FEE = "Vil blive beregnet i næste trin";
     let subtotal = 0;
     let total = 0;
     let countOfItems = 0;
@@ -28,7 +28,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
 
     // Provides free shipping if subtotal is over 500
     if (subtotal > 500) {
-        SHIPPING_FEE = "FREE";
+        SHIPPING_FEE = "GRATIS!";
     }
 
     
@@ -52,8 +52,8 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
         return (
             <div className="App">
                 <div>
-                    <h2>Order Overview</h2>
-                    <p className='legal'>Your order will not be official until we have confirmed your order.</p>
+                    <h2>Ordreoverblik</h2>
+                    <p className='legal'>Din bestilling er først bindende, når vi har bekræftet din ordre.</p>
                 </div>
                 <div className='orderTotal'>
                     <p>
@@ -65,7 +65,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
                 </div>
                 <div className='orderTotal'>
                     <p>
-                        Shipping
+                        Forsendelse
                     </p>
                     <p className='shipping' data-testid = "shippingTest">
                         

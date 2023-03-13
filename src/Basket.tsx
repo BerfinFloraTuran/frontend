@@ -66,7 +66,7 @@ function Basket(props: Props) {
                 </div>
 
                 <section className={'grid-basket'} id={"basket"}>
-                    <h2>Cart</h2>
+                    <h2>Indkøbskurv</h2>
                     {productList.map((product, index) => (
                         <section data-testid="dataTesting" key={index}>
                             <div className="product-wrapper">
@@ -111,13 +111,13 @@ function Basket(props: Props) {
                 <section className={'grid-total'}>
                     <SumofItems dataItems={productList}/>
                     <button className='checkout' onClick={() => props.onCheckout(productList)}>
-                        <p> Proceed to shipping </p>
+                        <p> Fortsæt til levering </p>
                     </button>
                     <div className='discountCode'>
-                        <label htmlFor="discountCode">Insert voucher or discount code</label>
+                        <label htmlFor="discountCode">Indtast rabatkode eller gavekort</label>
                         <input type="text" id="discountCode" name="discountCode"></input>
                         <button className='discountCode' >
-                            Apply Voucher
+                            Indløs kode
                         </button>
                     </div>
                 </section>

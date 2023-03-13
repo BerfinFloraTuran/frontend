@@ -9,9 +9,9 @@ describe (App.name, ()=> {
     it("should render", () =>{
         render (<App/>);
         expect (screen.getByText ("Subtotal")).toBeInTheDocument();
-        expect (screen.getByText ("Shipping")).toBeInTheDocument();
+        expect (screen.getByText ("Forsendelse")).toBeInTheDocument();
         expect (screen.getByText ("Total")).toBeInTheDocument();
-        expect (screen.getByText ("Proceed to shipping")).toBeInTheDocument();
+        expect (screen.getByText ("Fortsæt til levering")).toBeInTheDocument();
     
     })
 
@@ -92,14 +92,14 @@ describe (App.name, ()=> {
                 const shippingText = screen.getByTestId("shippingTest");
                 console.log(shippingText.textContent);
                 console.log(totalTest.textContent);
-                expect(shippingText.textContent).toBe("FREE");
+                expect(shippingText.textContent).toBe("GRATIS!");
                 
             
                 await fireEvent.click(closeButton[1]);
 
                 console.log(shippingText.textContent); 
                 console.log(totalTest.textContent);
-                expect(shippingText.textContent).toBe("Calculated at next step");
+                expect(shippingText.textContent).toBe("Vil blive beregnet i næste trin");
                 
 
 
@@ -107,7 +107,7 @@ describe (App.name, ()=> {
                 await fireEvent.change(quantity[0], {target : {value : 5}} );
                 console.log(shippingText.textContent);
                 console.log(totalTest.textContent);
-                expect(shippingText.textContent).toBe("FREE");
+                expect(shippingText.textContent).toBe("GRATIS!");
 
                 
 
