@@ -63,7 +63,7 @@ input[type="text"]::after {
     'tot'
     'fo';
   grid-template-columns: 1fr;
-  grid-template-rows: 0fr 0fr 3fr 3fr 2fr;
+  grid-template-rows: 0fr 0fr 3fr 3fr 0.25fr;
   row-gap: 20px;
   border: 3px solid #f2f2f2;
 }
@@ -85,7 +85,7 @@ input[type="text"]::after {
       'ba tot'
       'fo fo';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:0fr 0fr 7fr 2fr;
+    grid-template-rows:0fr 0fr 7fr 0.25fr;
     row-gap: 20px;
   }
   .grid-container1 ul{
@@ -100,7 +100,7 @@ input[type="text"]::after {
       '. ba tot .'
       'fo fo fo fo';
     grid-template-columns: 150px 600px 600px 150px;
-    grid-template-rows: 0fr 0fr 7fr 1fr;
+    grid-template-rows: 0fr 0fr 1fr 0.25fr;
     row-gap: 20px;
   }
   .grid-container1 ul{
@@ -131,6 +131,11 @@ input[type="text"]::after {
   grid-area: ba;
   background-color: #dad6d6;
   min-height: 500px;
+}
+
+.grid-recommended{
+  grid-area: re;
+  background-color: red;
 }
 
 .grid-total{
