@@ -4,6 +4,7 @@ import { PostalCodeinput } from './InputAssets/PostalCode';
 import ShippingOptions from "./ShippingOptions";
 import {Product} from "./Basket";
 import Payment from "./Payment"
+import SumofItems from "./SumofItems";
 
 interface Props {
     productList: Product[];
@@ -37,7 +38,7 @@ function Checkout(props: Props) {
                 <form id="form1" className="checkout-form">
                     <div className="form-row">
                         <label htmlFor="firstName">Fornavn</label>
-                        <input type="text" id="firstName" name="firstName" required/>
+                        <input type="text" id="firstName" name="firstName" required autoFocus={true}/>
                     </div>
                     <div className="form-row">
                         <label htmlFor="lastName">Efternavn</label>
@@ -50,6 +51,14 @@ function Checkout(props: Props) {
                     <div className="form-row">
                         <label htmlFor="phone">Telefonnummer</label>
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="company">Firma (valgfri)</label>
+                        <input type="text" id="company" name="company"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="cvr">CVR (valgfri)</label>
+                        <input type="cvr" id="cvr" name="cvr" pattern="[0-9]{8}" title ="Venligst indtast 8 cifret CVR nummer"/>
                     </div>
                     <div className="form-row">
                         <label>Adresse</label>
@@ -80,6 +89,14 @@ function Checkout(props: Props) {
                         <label htmlFor="phone">Telefonnummer</label>
                         <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required title ="Venligst indtast 8 cifret telefonnummer"/>
                     </div>
+                                        <div className="form-row">
+                        <label htmlFor="company">Firma (valgfri)</label>
+                        <input type="text" id="company" name="company"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="cvr">CVR</label>
+                        <input type="cvr" id="cvr" name="cvr" pattern="[0-9]{8}" title ="Venligst indtast 8 cifret CVR nummer"/>
+                    </div>
                                 <div className="form-row">
                                     <label>Adresse</label>
                                     <PostalCodeinput postalcode='asd'></PostalCodeinput>
@@ -92,7 +109,7 @@ function Checkout(props: Props) {
 
             </div>
             <div className={"grid-orderView"}>
-                <h2>Ordreoverblik</h2>
+                <h2>Kurv</h2>
                     {props.productList.map((product, index) => (
                         <section key={index}>
                                     <ul id={"orderviewlist"}>
@@ -107,6 +124,12 @@ function Checkout(props: Props) {
                     <button type="submit" form="form1" className='checkout'>
                         <p> Gå til betaling </p>
                     </button>
+                <br/>
+                <SumofItems dataItems={props.productList}/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
             <div className={"grid-shipping"}>
                 <h3>Leveringsmuligheder</h3>

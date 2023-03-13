@@ -39,7 +39,7 @@
 
 input[type="text"] {
   box-sizing: border-box;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   padding: 10px 30px 10px 10px; /* Add space for the dropdown arrow and the options list */
   border: 1px solid #ccc;

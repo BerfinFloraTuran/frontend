@@ -10,7 +10,8 @@
 
   p.legal {
     font-size: 15px;
-    font-weight: lighter
+    font-weight: lighter;
+    text-align: center;
   }
 
   .orderTotal{
