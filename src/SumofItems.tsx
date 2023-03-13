@@ -3,12 +3,13 @@ import './SumOfItems.css'
 import React from 'react';
 import { Product } from './Basket';
 
-function calculatePrice(products:Product[]):{ subtotal: number, shipping: String, total: number } {
+function calculatePrice(products:Product[]):{ subtotal: number, shipping: String, total: number, discount: number} {
     const SHIPPING_THRESHOLD = 500;
     let SHIPPING_FEE = "Vil blive beregnet i næste trin";
     let subtotal = 0;
     let total = 0;
     let countOfItems = 0;
+    let discount = 0;
 
 
 
@@ -22,6 +23,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
     // Adds 10% discount if subtotal is over 300
     if (subtotal > 300) {
         total = subtotal * 0.9;
+        discount = subtotal * 0.1;
     } else {
         total = subtotal;
     }
@@ -35,8 +37,10 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
 
 
         return {
-            subtotal: subtotal, shipping: SHIPPING_FEE,
-            total: total
+            subtotal: subtotal, 
+            shipping: SHIPPING_FEE,
+            total: total,
+            discount: discount
         };
 }
 
@@ -61,6 +65,14 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
                     </p>
                     <p data-testid = "subtotalTest">
                         {subtotal.subtotal} DKK
+                    </p>
+                </div>
+                <div className='orderTotal'>
+                    <p>
+                        Rabat
+                    </p>
+                    <p>
+                        -{subtotal.discount} DKK
                     </p>
                 </div>
                 <div className='orderTotal'>
