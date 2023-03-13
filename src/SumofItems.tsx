@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './SumOfItems.css'
 import React from 'react';
-import { Product } from './App';
+import { Product } from './Basket';
 
 function calculatePrice(products:Product[]):{ subtotal: number, shipping: String, total: number } {
     const SHIPPING_THRESHOLD = 500;
@@ -10,10 +10,7 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
     let total = 0;
     let countOfItems = 0;
 
-    /*
-    const subtotal = products.reduce((sum, product) =>
-      sum + product.price * product.quantity, 0);
-*/
+
 
     products.map((product)=>{
        subtotal+=product.price * product.quantity;
@@ -22,10 +19,20 @@ function calculatePrice(products:Product[]):{ subtotal: number, shipping: String
        };
       }
     );
+    // Adds 10% discount if subtotal is over 300
+    if (subtotal > 300) {
+        total = subtotal * 0.9;
+    } else {
+        total = subtotal;
+    }
 
+    // Provides free shipping if subtotal is over 500
     if (subtotal > 500) {
         SHIPPING_FEE = "FREE";
     }
+
+    
+
 
         return {
             subtotal: subtotal, shipping: SHIPPING_FEE,
