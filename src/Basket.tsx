@@ -9,7 +9,9 @@ export interface Product {
     name: string;
     quantity: number;
     wrapped: boolean;
+    upsellProductId?: string;
 }
+
 interface Props {
     onCheckout: (productList: Product[]) => void;
     productList: Product[];
@@ -18,25 +20,32 @@ interface Props {
 function Basket(props: Props) {
     const [productList, setProductList] = useState<Product[]>(props.productList);
 
+    function handleCheckboxChange() {
+        setIsChecked(!isChecked);
+    }
+
+    const [isChecked, setIsChecked] = useState(false);
     useEffect(() => {
         async function fetchData() {
             const data = props.productList.length === 0
                 ? await fetch('https://raw.githubusercontent.com/larsthorup/checkout-data/main/product.json')
                     .then(response => response.json())
-                    .then(data => data.slice(7, 10))
+                    .then(data => data.slice(4, 7))
                 : props.productList;
 
             const mappedData = data.map((item: any) => ({
                 price: item.price,
                 name: item.name,
                 quantity: item.quantity || 1,
-                wrapped: false
+                wrapped: false,
+                upsellProductId: item.upsellProductId
             }));
             setProductList(mappedData);
         }
 
         fetchData();
     }, [props.productList]);
+
     const removeItem = (index: number) => {
         const updatedProductList = [...productList];
         updatedProductList.splice(index, 1);
@@ -60,7 +69,7 @@ function Basket(props: Props) {
                 <div className="grid-nav">
                     <div className="progress" id="progress"></div>
                     <div className="circle active">1</div>
-                    <div className="circle" data-testid = "navTest"onClick={() => props.onCheckout(productList)}>2</div>
+                    <div className="circle" data-testid="navTest" onClick={() => props.onCheckout(productList)}>2</div>
                     <div className="circle">3</div>
                     <div className="circle">4</div>
                 </div>
@@ -71,7 +80,8 @@ function Basket(props: Props) {
                         <section data-testid="dataTesting" key={index}>
                             <div className="product-wrapper">
                                 <img src={"src/assets/noimg.png"} alt={product.name}/>
-                                <button className="close-button" data-testid="close-buttonTesting" onClick={() => removeItem(index)}>
+                                <button className="close-button" data-testid="close-buttonTesting"
+                                        onClick={() => removeItem(index)}>
                                     X
                                 </button>
                                 <div className="product-info">
@@ -100,6 +110,19 @@ function Basket(props: Props) {
                                             <label>Gaveindpakning</label>
                                             <input id={"check"} type={"checkbox"} data-testid="checkboxTest"/>
                                         </li>
+                                        {product.upsellProductId && (
+                                            <li>
+                                                <label>
+                                                    Vil du opgradere til:{' '}
+                                                    {product.upsellProductId.split('-')
+                                                            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                                                            .join(' ')}
+                                                    ?
+                                                </label>
+                                                <input id={"check"} type={"checkbox"}/>
+
+                                            </li>
+                                        )}
                                         <br/>
                                     </ul>
                                 </div>
@@ -107,7 +130,6 @@ function Basket(props: Props) {
                         </section>
                     ))}
                 </section>
-
                 <section className={'grid-total'}>
                     <SumofItems dataItems={productList}/>
                     <button className='checkout' onClick={() => props.onCheckout(productList)}>
@@ -116,7 +138,7 @@ function Basket(props: Props) {
                     <div className='discountCode'>
                         <label htmlFor="discountCode">Indtast rabatkode eller gavekort</label>
                         <input type="text" id="discountCode" name="discountCode"></input>
-                        <button className='discountCode' >
+                        <button className='discountCode'>
                             Indløs kode
                         </button>
                     </div>
