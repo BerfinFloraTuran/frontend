@@ -4,6 +4,7 @@ import { PostalCodeinput } from './InputAssets/PostalCode';
 import ShippingOptions from "./ShippingOptions";
 import {Product} from "./Basket";
 import Payment from "./Payment"
+import SumofItems from "./SumofItems";
 
 interface Props {
     productList: Product[];
@@ -92,7 +93,7 @@ function Checkout(props: Props) {
 
             </div>
             <div className={"grid-orderView"}>
-                <h2>Ordreoverblik</h2>
+                <h2>Kurv</h2>
                     {props.productList.map((product, index) => (
                         <section key={index}>
                                     <ul id={"orderviewlist"}>
@@ -107,6 +108,12 @@ function Checkout(props: Props) {
                     <button type="submit" form="form1" className='checkout'>
                         <p> Gå til betaling </p>
                     </button>
+                <br/>
+                <SumofItems dataItems={props.productList}/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
             <div className={"grid-shipping"}>
                 <h3>Leveringsmuligheder</h3>
