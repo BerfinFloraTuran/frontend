@@ -115,4 +115,36 @@ describe (App.name, ()=> {
 
         }); 
 
-        
+
+        describe (App.name, ()=> {
+            it("Should be RABAT", async () =>{
+                render (<App/>);
+
+
+                await screen.findAllByTestId("dataTesting");
+                const user = userEvent.setup(); 
+
+                let discount = "-59 DKK"; 
+                const discounttest = screen.getByTestId("discountTest");
+                console.log(discounttest)
+
+                
+                expect(discounttest.textContent).toEqual(discount); 
+
+                const closeButton = screen.getAllByTestId("close-buttonTesting");
+                await user.click(closeButton[0]); 
+
+                discount = "-55 DKK"
+                expect(discounttest.textContent).toEqual(discount); 
+
+                await user.click(closeButton[1]); 
+                const required = screen.getByTestId("requiredTest"); 
+
+
+
+                expect(required).toBeInTheDocument();
+            
+            
+            
+            });
+            }); 
